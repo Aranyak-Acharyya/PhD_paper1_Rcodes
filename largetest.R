@@ -1,7 +1,7 @@
 library(Matrix)
 library(irlba)
 
-n<-1000
+n<-10000
 T<-5
 d<-4
 
