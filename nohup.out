@@ -29,3 +29,15 @@ Execution halted
 [1] 4.000000e+02 4.968864e-05 3.079227e-03 1.326354e-03
 [1] 5.000000e+02 5.711574e-05 4.132123e-03 1.078812e-03
 [1] 6.000000e+02 3.451829e-05 1.540370e-03 4.204000e-04
+Error in library(vegan3d) : there is no package called ‘vegan3d’
+Execution halted
+[1] 1.315065 1.217202 1.337561 1.312292 1.302345
+
+Execution halted
+
+Execution halted
+[1] 0.9636816 0.9004351 0.9362394 0.8901155 0.9028532
+Error: cannot allocate vector of size 37.3 Gb
+Execution halted
+Warning message:
+system call failed: Cannot allocate memory 
