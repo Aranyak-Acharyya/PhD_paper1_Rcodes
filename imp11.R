@@ -142,7 +142,7 @@ for(n in n_vec)
       
     }
   
-  new_row<-c(n,apply(B,2,mean))
+  new_row<-c(n,nrow(B),apply(B,2,mean))
   print(new_row)
   RP<-rbind(RP,new_row)
 }
