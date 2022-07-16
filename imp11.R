@@ -26,9 +26,9 @@ clusterEvalQ(clust, .libPaths(libs))
 
 d<-4
 
-s<-5
+s<-50
 
-n_vec<-seq(500,700,100)
+n_vec<-seq(1000,50000,1000)
 
 
 
@@ -152,7 +152,7 @@ stopCluster(clust)
 RP<-RP[-1,]
 
 df<-data.frame(RP)
-save(df,file="isoregdiff.RData")
+save(df,file="new11.RData")
 
 
 
