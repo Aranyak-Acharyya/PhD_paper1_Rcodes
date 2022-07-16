@@ -39,8 +39,8 @@ set.seed(12345)
 
 
 s<-5
-l_vec<-seq(2000,15000,1000)
-T<-500
+l_vec<-seq(2000,2200,100)
+T<-100
 d<-4
 
 a<-2.0
@@ -141,8 +141,8 @@ for(l in l_vec)
     
     qt_vec<-c(qt_vec,qt)
     
-    #dec1<-c(trial,qt)
-    #print(dec1)
+    dec1<-c(trial,qt)
+    print(dec1)
     
   }
   
@@ -151,8 +151,8 @@ for(l in l_vec)
   
   gl_min_vec<-c(gl_min_vec,gl_min)
   
-  #dec<-c(l,gl_min)
-  #print(dec)
+  dec<-c(l,gl_min)
+  print(dec)
   
   
 }
@@ -164,4 +164,4 @@ for(l in l_vec)
 
 
 df<-data.frame(l_vec,gl_min_vec)
-save(df,file = "unkntest1.RData")
+save(df,file = "unkntestnew.RData")
