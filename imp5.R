@@ -6,10 +6,12 @@ library(foreach)
 library(doParallel)
 registerDoParallel()
 
-
+library(Matrix)
+library(irlba)
+library(princurve)
 
 e <- new.env()
-e$libs <- c("irlba","Matrix","princurve",.libPaths())
+e$libs <- c("Matrix","irlba","princurve",.libPaths())
 clusterExport(clust, "libs", envir=e)
 clusterEvalQ(clust, .libPaths(libs))
 
@@ -18,7 +20,7 @@ clusterEvalQ(clust, .libPaths(libs))
 sig_ep<-0.1
 d<-4
 m_vec<-c(0.5,0.5,0.5,0.5)
-n_vec<-seq(100,500,100)
+n_vec<-seq(100,300,100)
 
 
 beta<-5.0
@@ -124,30 +126,3 @@ RS<-RS[-1,]
 df<-data.frame(RS)
 save(df,file="new5.RData")
 
-risk1a_vec<-RS[,1]
-risk1b_vec<-RS[,2]
-risk2a_vec<-RS[,3]
-risk2b_vec<-RS[,4]
-risk1_vec<-RS[,5]
-risk2_vec<-RS[,6]
-
-
-library(ggplot2)
-library(reshape2)
-library(latex2exp)
-
-df<-data.frame(n_vec,risk1_vec,risk2_vec)
-dfm<-melt(df, id.vars = 'n_vec')
-print(dfm)
-ggplot(dfm, aes(x=n_vec, y=value, 
-                colour = variable)) +
-  geom_point() +
-  geom_line() +
-  ylab(TeX("sample MSEs $\\rightarrow$")) +
-  xlab(TeX("number of nodes(n) $\\rightarrow$")) +
-  #ggtitle("Consistency of regression parameter estimates on
-   #       known linear manifold") +
-  scale_colour_manual(values = c("red","orange"),
-                      labels=unname(TeX(c(
-                        "sample MSE of  $\\hat{\\theta}_{true}$",
-                        "sample MSE of $\\hat{\\theta}_{naive}$"))))
