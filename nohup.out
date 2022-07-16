@@ -68,3 +68,153 @@ This is vegan 2.4-5
 Warning messages:
 1: In rgl.init(initValue, onlyNULL) : RGL: unable to open X11 display
 2: 'rgl_init' failed, running with rgl.useNULL = TRUE 
+Loading required package: vegan
+Loading required package: permute
+Loading required package: lattice
+This is vegan 2.4-5
+Warning messages:
+1: In rgl.init(initValue, onlyNULL) : RGL: unable to open X11 display
+2: 'rgl_init' failed, running with rgl.useNULL = TRUE 
+Loading required package: vegan
+Loading required package: permute
+Loading required package: lattice
+This is vegan 2.4-5
+Warning messages:
+1: In rgl.init(initValue, onlyNULL) : RGL: unable to open X11 display
+2: 'rgl_init' failed, running with rgl.useNULL = TRUE 
+Loading required package: vegan
+Loading required package: permute
+Loading required package: lattice
+This is vegan 2.4-5
+Warning messages:
+1: In rgl.init(initValue, onlyNULL) : RGL: unable to open X11 display
+2: 'rgl_init' failed, running with rgl.useNULL = TRUE 
+Loading required package: vegan
+Loading required package: permute
+Loading required package: lattice
+[1] 1.00000000 0.03053093
+This is vegan 2.4-5
+Warning messages:
+1: In rgl.init(initValue, onlyNULL) : RGL: unable to open X11 display
+2: 'rgl_init' failed, running with rgl.useNULL = TRUE 
+[1] 1.0000000 0.1230921
+[1] 2.0000000 0.1770059
+[1] 3.0000000 0.1476111
+[1] 4.00000000 0.07773688
+[1] 5.0000000 0.1012137
+[1] 6.0000000 0.1600904
+[1] 7.00000000 0.09251651
+[1] 8.0000000 0.1839465
+[1] 9.000000 0.213861
+[1] 10.0000000  0.1852737
+[1] 100.0000000   0.1462348
+[1] 1.00000000 0.05998475
+[1] 2.00000000 0.06274212
+[1] 3.0000000 0.1316094
+[1] 4.0000000 0.1082073
+[1] 5.0000000 0.1028766
+[1] 6.00000000 0.03739348
+[1] 7.00000000 0.04232681
+[1] 8.0000000 0.1510857
+[1] 9.00000000 0.09454463
+[1] 10.00000000  0.04511475
+[1] 150.00000000   0.08358855
+[1] 1.0000000 0.1284217
+[1] 2.00000000 0.07767221
+[1] 3.000000 0.108738
+[1] 4.0000000 0.1047991
+[1] 5.0000000 0.1408122
+[1] 6.0000000 0.1013637
+[1] 7.0000000 0.1288302
+[1] 8.0000000 0.1077709
+[1] 9.000000000 0.006219786
+[1] 10.00000000  0.09662082
+[1] 200.0000000   0.1001249
+[1] 2.00000000 0.02390607
+[1] 3.00000000 0.01451329
+Error in library(princurve) : there is no package called ‘princurve’
+Execution halted
+[1] 4.00000000 0.02092655
+[1] 5.000000000 0.007322717
+[[1]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[2]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[3]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[4]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[5]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[6]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[7]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[8]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[9]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[10]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[11]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[12]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[13]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[14]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[15]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[16]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[17]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[18]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[19]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[20]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[21]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[22]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[23]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[[24]]
+[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+
+[1] 1.000000e+02 3.352806e-04 9.870912e-04 2.907058e-02 1.098843e-01
+[6] 1.322372e-03 1.389549e-01
+[1] 2.000000e+02 2.015771e-04 6.312066e-04 6.792084e-03 2.704855e-02
+[6] 8.327838e-04 3.384063e-02
+[1] 3.000000e+02 1.150101e-04 3.672640e-04 3.244451e-03 1.240216e-02
+[6] 4.822742e-04 1.564661e-02
+Warning message:
+In data.row.names(row.names, rowsi, i) :
+  some row.names duplicated: 2,3 --> row.names NOT used
+[1] 6.00000000 0.01764665
