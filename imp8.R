@@ -39,8 +39,8 @@ set.seed(12345)
 
 
 s<-5
-l_vec<-seq(2000,2200,100)
-T<-100
+l_vec<-seq(100,200,50)
+T<-10
 d<-4
 
 a<-2.0
@@ -164,4 +164,4 @@ for(l in l_vec)
 
 
 df<-data.frame(l_vec,gl_min_vec)
-save(df,file = "unkntestnew.RData")
+save(df,file = "new1.RData")
