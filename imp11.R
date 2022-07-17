@@ -26,9 +26,9 @@ clusterEvalQ(clust, .libPaths(libs))
 
 d<-4
 
-s<-50
+s<-25
 
-n_vec<-seq(1000,50000,1000)
+n_vec<-seq(1000,20000,1000)
 
 
 
@@ -131,7 +131,7 @@ for(n in n_vec)
       ynew_naive<-alpha_naive+beta_naive*znew
       
       #proximity of predicted responses
-      qt1<-(ynew_naive-ynew_true)^2
+      qt1<-abs(ynew_naive-ynew_true)
       
       qt2<-(ynew_true-ynew)^2
       
