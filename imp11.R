@@ -56,7 +56,7 @@ for(n in n_vec)
   
   opts<-list(preschedule=FALSE)
   
-  B<-foreach(trial=1:250,.combine='rbind',.options.multicore=opts) %dopar%
+  B<-foreach(trial=1:100,.combine='rbind',.options.multicore=opts) %dopar%
     {
       #generating regressors
       ts<-runif(s,min=0,max=1)
