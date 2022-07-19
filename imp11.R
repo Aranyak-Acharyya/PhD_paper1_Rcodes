@@ -26,7 +26,7 @@ clusterEvalQ(clust, .libPaths(libs))
 
 d<-4
 
-s<-25
+s<-5
 
 n_vec<-seq(1000,20000,1000)
 
