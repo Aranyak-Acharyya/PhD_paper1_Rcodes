@@ -28,7 +28,7 @@ d<-4
 
 s<-5
 
-n_vec<-seq(5000,100000,5000)
+n_vec<-seq(1000,12000,500)
 
 
 
@@ -131,7 +131,7 @@ for(n in n_vec)
       ynew_naive<-alpha_naive+beta_naive*znew
       
       #proximity of predicted responses
-      qt1<-abs(ynew_naive-ynew_true)
+      qt1<-(ynew_naive-ynew_true)^2
       
       qt2<-(ynew_true-ynew)^2
       
