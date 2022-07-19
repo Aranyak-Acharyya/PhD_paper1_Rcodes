@@ -28,7 +28,7 @@ d<-4
 
 s<-5
 
-n_vec<-seq(1000,20000,1000)
+n_vec<-seq(5000,100000,5000)
 
 
 
@@ -38,7 +38,7 @@ sig_ep<-0.01
 
 clusterExport(clust,list("d","s","alpha","beta","sig_ep"))
 
-RP<-matrix(,ncol=4)
+RP<-matrix(,ncol=5)
 
 
 for(n in n_vec)
