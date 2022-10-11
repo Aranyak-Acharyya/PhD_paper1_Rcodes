@@ -28,7 +28,7 @@ d<-4
 
 s<-5
 
-n_vec<-seq(1000,12000,500)
+n_vec<-seq(500,700,100)
 
 
 
@@ -38,7 +38,7 @@ sig_ep<-0.01
 
 clusterExport(clust,list("d","s","alpha","beta","sig_ep"))
 
-RP<-matrix(,ncol=5)
+RP<-matrix(,ncol=4)
 
 
 for(n in n_vec)
@@ -56,7 +56,7 @@ for(n in n_vec)
   
   opts<-list(preschedule=FALSE)
   
-  B<-foreach(trial=1:100,.combine='rbind',.options.multicore=opts) %dopar%
+  B<-foreach(trial=1:250,.combine='rbind',.options.multicore=opts) %dopar%
     {
       #generating regressors
       ts<-runif(s,min=0,max=1)
@@ -142,7 +142,7 @@ for(n in n_vec)
       
     }
   
-  new_row<-c(n,nrow(B),apply(B,2,mean))
+  new_row<-c(n,apply(B,2,mean))
   print(new_row)
   RP<-rbind(RP,new_row)
 }
@@ -152,7 +152,7 @@ stopCluster(clust)
 RP<-RP[-1,]
 
 df<-data.frame(RP)
-save(df,file="new11.RData")
+save(df,file="isoregdiff.RData")
 
 
 
