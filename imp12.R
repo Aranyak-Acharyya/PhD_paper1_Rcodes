@@ -20,44 +20,135 @@ library(combinat)
 #loading the dataset
 load("/cloud/project/df-forAranyak.RData")
 
+n<-nrow(df)
+
 X_hat<-cbind(df$X.1,df$X.2,df$X.3,df$X.4,df$X.5,df$X.6)
 y<-df$dist
 
+plot(data.frame(X_hat))
 
-s<-10
+
 d<-6
-n_vec<-seq(50,100,5)
 
-pred_diff_avg_vec<-vector()
 
-for(n in n_vec)
+s_vec<-seq(10,91,1)
+
+
+
+
+
+g<-function(S)
 {
+  pred_diff_vec<-vector()
   
-  XX_hat<-X_hat[1:n,]
-  KK<-n/2
-  K<-as.integer(KK)
-  z_hat<-isomap(vegdist(XX_hat, method="euclidean"),
-                k=K,ndim=1,
-                path="shortest")$points
+  for(s in s_vec)
+  {
+    
+    #determining number of nearest neighbour to run isomap
+    K<-35
+    
+    #applying isomap to obtain 1d embeddings
+    z_hat<-isomap(vegdist(X_hat, method="euclidean"),
+                  k=K,ndim=1,
+                  path="shortest")$points
+    
+    #extracting first s of them
+    zs_hat<-z_hat[1:s]
+    ys<-y[1:s]
+    
+    #estimating regression parameters treating isomap embeddings 
+    #as regressors
+    beta_naive<-cov(ys,zs_hat)/var(zs_hat)
+    alpha_naive<-mean(ys)-beta_naive*mean(zs_hat)
+    
+    #predicting response
+    y0_pred<-alpha_naive+beta_naive*z_hat[S]
+    y0<-y[S]
+    pred_diff<-abs(y0_pred-y0)/mean(y[(s+1):n])
+    
+    dec<-c(s,pred_diff)
+    #print(dec)
+    
+    
+    pred_diff_vec<-c(pred_diff_vec,pred_diff)
+    
+  }
   
-  zs_hat<-z_hat[1:s]
-  ys<-y[1:s]
+  return(pred_diff_vec)
   
-  beta_naive<-cov(ys,zs_hat)/var(zs_hat)
-  alpha_naive<-mean(ys)-beta_naive*mean(zs_hat)
-  
-  y0_pred<-alpha_naive+beta_naive*z_hat[(s+1)]
-  y0<-y[(s+1)]
-  pred_diff_avg<-abs(y0_pred-y0)
-  
-  dec<-c(n,pred_diff_avg)
-  print(dec)
-  
-  pred_diff_avg_vec<-c(pred_diff_avg_vec,pred_diff_avg)
-
 }
 
-plot(n_vec,pred_diff_avg_vec,type="l",col="red")
+par(mar=c(2,2,2,2))
+
+
+S_vec<-seq(s_vec[length(s_vec)]+1,100,1)
+par(mfrow=c(3,3))
+for(S in S_vec)
+{
+  plot(s_vec,g(S),type="l")
+  #title(main = S)
+  Sys.sleep(5)
+}
+
+print(g(61))
+
+
+
+for(s in s_vec)
+{
+    
+    #determining number of nearest neighbour to run isomap
+    K<-35
+    
+    #applying isomap to obtain 1d embeddings
+    z_hat<-isomap(vegdist(X_hat, method="euclidean"),
+                  k=K,ndim=1,
+                  path="shortest")$points
+    
+    #extracting first s of them
+    zs_hat<-z_hat[1:s]
+    ys<-y[1:s]
+    
+    #estimating regression parameters treating isomap embeddings 
+      #as regressors
+    beta_naive<-cov(ys,zs_hat)/var(zs_hat)
+    alpha_naive<-mean(ys)-beta_naive*mean(zs_hat)
+    
+    #predicting response
+    y0_pred<-alpha_naive+beta_naive*z_hat[S]
+    y0<-y[S]
+    pred_diff<-abs(y0_pred-y0)
+    
+    dec<-c(s,pred_diff)
+    print(dec)
+  
+    
+    pred_diff_vec<-c(pred_diff_vec,pred_diff)
+  
+}
+
+
+
+print(pred_diff_vec)
+plot(s_vec,pred_diff_vec,type="l",col="blue")
+
+
+
+
+
+
++
+  #ggtitle("Consistency of regression parameter estimates on
+  #      known non-linear manifold") +
+  scale_colour_manual(values = c("red","orange","blue"),
+                      labels=unname(TeX(c(
+                        "sample MSE of  $\\hat{\\beta}_{true}$",
+                        "sample MSE of $\\hat{\\beta}_{naive}$",
+                        "sample MSE of $\\hat{\\beta}_{adj,\\hat{\\sigma}}$"
+                      ))))
+
+
+
 
 
 
