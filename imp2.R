@@ -23,7 +23,7 @@ clusterEvalQ(clust, .libPaths(libs))
 sig_ep<-0.1
 d<-4
 m_vec<-c(0.5,0.5,0.5,0.5)
-n_vec<-seq(500,1500,50)
+n_vec<-seq(100,1000,100)
 
 
 beta<-5.0
