@@ -124,3 +124,11 @@ for(n in n_vec)
 }
 
 stopCluster(clust)
+
+M<-M[-1,]
+print(M)
+
+df<-data.frame(M[,1],M[,2],M[,3])
+print(df)
+
+save(df,file="P3new2.RData")
