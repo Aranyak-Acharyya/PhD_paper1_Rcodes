@@ -25,7 +25,7 @@ M<-matrix(,ncol=3)
 w_vec<-seq(-10,10,by=0.001)
 
 #n<-1000
-n_vec<-seq(1000,15000,1000)
+n_vec<-seq(1000,2000,250)
 
 d<-4
 
@@ -131,7 +131,11 @@ for(n in n_vec)
 
 stopCluster(clust)
 
-
+M<-M[-1,]
+df<-as.data.frame(M)
+save(df,file="P3new5.RData")
+load("P3new5.RData")
+print(df)
 
 
 
