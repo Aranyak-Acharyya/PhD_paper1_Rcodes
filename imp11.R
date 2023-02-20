@@ -23,7 +23,7 @@ d<-4
 
 s<-5
 
-n_vec<-seq(1000,10000,500)
+n_vec<-seq(1000,4000,500)
 
 
 
@@ -50,9 +50,10 @@ for(n in n_vec)
   clusterExport(clust,list("n","l","K"))
   
   
-  opts<-list(preschedule=FALSE)
+  #opts<-list(preschedule=FALSE)
+  #foreach(trial=1:100,.combine='c',.options.multicore=opts) %dopar%
   
-  B<-foreach(trial=1:100,.combine='c',.options.multicore=opts) %dopar%
+  B<-foreach(trial=1:100,.combine='c') %dopar%
     {
       #generating regressors
       ts<-runif(s,min=0,max=1)
@@ -82,12 +83,12 @@ for(n in n_vec)
       X_hat_raw<-A_irlba$u%*%diag(A_irlba$d)^0.5
       
       #finding consistent adjacency spectral estimates of latent positions
-      vals<-svd(t(X_hat_raw)%*%X)
-      W<-vals$u%*%t(vals$v)
-      X_hat<-X_hat_raw%*%W
+      #vals<-svd(t(X_hat_raw)%*%X)
+      #W<-vals$u%*%t(vals$v)
+      #X_hat<-X_hat_raw%*%W
       
       #extracting rows on which isomap will run
-      XX_hat<-X_hat[1:l,]
+      XX_hat<-X_hat_raw[1:l,]
       
       
       
