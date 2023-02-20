@@ -31,9 +31,10 @@ alpha<-2.0
 beta<-5.0
 sig_ep<-0.01
 
-clusterExport(clust,list("d","s","alpha","beta","sig_ep"))
+clusterExport(clust,list("d","s",
+                         "alpha","beta","sig_ep"))
 
-RP<-matrix(,ncol=4)
+RP<-matrix(,ncol=3)
 
 
 for(n in n_vec)
@@ -51,7 +52,7 @@ for(n in n_vec)
   
   opts<-list(preschedule=FALSE)
   
-  B<-foreach(trial=1:100,.combine='rbind',.options.multicore=opts) %dopar%
+  B<-foreach(trial=1:100,.combine='c',.options.multicore=opts) %dopar%
     {
       #generating regressors
       ts<-runif(s,min=0,max=1)
@@ -126,18 +127,17 @@ for(n in n_vec)
       ynew_naive<-alpha_naive+beta_naive*znew
       
       #proximity of predicted responses
-      qt1<-(ynew_naive-ynew_true)^2
+      qt<-(ynew_naive-ynew_true)^2
       
-      qt2<-(ynew_true-ynew)^2
+      #qt2<-(ynew_true-ynew)^2
       
-      qt3<-(ynew_naive-ynew)^2
+      #qt3<-(ynew_naive-ynew)^2
       
-      dec<-c(qt1,qt2,qt3)
-      dec
+      qt
       
     }
   
-  new_row<-c(n,apply(B,2,mean))
+  new_row<-c(n,length(B),mean(B))
   print(new_row)
   RP<-rbind(RP,new_row)
 }
@@ -148,7 +148,6 @@ RP<-RP[-1,]
 
 df<-data.frame(RP)
 save(df,file="new11.RData")
-
 
 
 
