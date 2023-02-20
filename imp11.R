@@ -16,7 +16,8 @@ e$libs <- c("irlba","Matrix","vegan3d",.libPaths())
 clusterExport(clust, "libs", envir=e)
 clusterEvalQ(clust, .libPaths(libs))
 
-
+rgl.init(initValue = 0, onlyNULL = FALSE, 
+         debug = getOption("rgl.debug", FALSE))
 
 
 d<-4
