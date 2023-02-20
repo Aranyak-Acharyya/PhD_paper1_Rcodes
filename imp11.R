@@ -19,16 +19,11 @@ clusterEvalQ(clust, .libPaths(libs))
 
 
 
-
-
-
-
-
 d<-4
 
 s<-5
 
-n_vec<-seq(500,700,100)
+n_vec<-seq(1000,12500,500)
 
 
 
@@ -56,7 +51,7 @@ for(n in n_vec)
   
   opts<-list(preschedule=FALSE)
   
-  B<-foreach(trial=1:250,.combine='rbind',.options.multicore=opts) %dopar%
+  B<-foreach(trial=1:100,.combine='rbind',.options.multicore=opts) %dopar%
     {
       #generating regressors
       ts<-runif(s,min=0,max=1)
@@ -152,7 +147,7 @@ stopCluster(clust)
 RP<-RP[-1,]
 
 df<-data.frame(RP)
-save(df,file="isoregdiff.RData")
+save(df,file="new11.RData")
 
 
 
