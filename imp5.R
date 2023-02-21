@@ -28,7 +28,7 @@ beta<-5.0
 alpha<-2.0
 
 
-clusterExport(clust,list("d","m_vec","alpha","beta"))
+clusterExport(clust,list("d","m_vec","alpha","beta","sig_ep"))
 
 RS<-matrix(,ncol=4)
 
