@@ -30,7 +30,7 @@ alpha<-2.0
 
 clusterExport(clust,list("d","m_vec","alpha","beta"))
 
-RS<-matrix(,ncol=8)
+RS<-matrix(,ncol=4)
 
 
 for(n in n_vec)
@@ -87,8 +87,8 @@ for(n in n_vec)
       alpha_true<-mean(y)-beta_true*mean(t)
       reg_par_true<-c(alpha_true,beta_true)
       loss1<-(norm(reg_par_true-reg_par,type = "2"))^2
-      loss1a<-(alpha_true-alpha)^2
-      loss1b<-(beta_true-beta)^2
+      #loss1a<-(alpha_true-alpha)^2
+      #loss1b<-(beta_true-beta)^2
       
       
       
@@ -97,24 +97,24 @@ for(n in n_vec)
       alpha_naive<-mean(y)-beta_naive*mean(t_hat)
       reg_par_naive<-c(alpha_naive,beta_naive)
       loss2<-(norm(reg_par_naive-reg_par,type = "2"))^2
-      loss2a<-(alpha_naive-alpha)^2
-      loss2b<-(beta_naive-beta)^2
+      #loss2a<-(alpha_naive-alpha)^2
+      #loss2b<-(beta_naive-beta)^2
       
       
       
       
       
-      dec<-c(loss1a,loss1b,loss2a,loss2b,loss1,loss2)
+      dec<-c(loss1,loss2)
       dec
       
     }
   
   risk_all<-apply(L,2,mean)
-  new_row<-c(n,risk_all,nrow(L))
+  new_row<-c(n,nrow(L),risk_all)
   RS<-rbind(RS,new_row)
   
   
-  print(new_row)
+  #print(new_row)
   
   
   
