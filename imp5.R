@@ -9,10 +9,10 @@ registerDoParallel()
 library(Matrix)
 library(MASS)
 library(irlba)
-library(princurve)
+#library(princurve)
 
 e <- new.env()
-e$libs <- c("Matrix","MASS","irlba","princurve",.libPaths())
+e$libs <- c("Matrix","MASS","irlba",.libPaths())
 clusterExport(clust, "libs", envir=e)
 clusterEvalQ(clust, .libPaths(libs))
 
