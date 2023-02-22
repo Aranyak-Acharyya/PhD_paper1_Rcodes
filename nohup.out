@@ -77,110 +77,16 @@ Warning messages:
 [[24]]
 [1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
 
-[1] 1.000000e+02 1.000000e+03 2.012245e-02
-[1] 1.00e+02 1.50e+03 1.74e-02
-[1] 1.00e+02 2.00e+03 1.66e-02
-[1] 1.00e+02 2.50e+03 1.24e-02
-[1] 1.00e+02 3.00e+03 1.16e-02
-[1] 1.00e+02 3.50e+03 1.16e-02
-[1] 1.0e+02 4.0e+03 1.4e-02
-[1] 1.00e+02 4.50e+03 1.14e-02
-[1] 1.0e+02 5.0e+03 1.2e-02
-[1] 1.00e+02 5.50e+03 1.06e-02
-[1] 1.0e+02 6.0e+03 9.8e-03
-[1]  100.00 6500.00    0.01
-[1] 1.00e+02 7.00e+03 1.08e-02
-[1] 1.00e+02 7.50e+03 1.12e-02
-[1] 1.0e+02 8.0e+03 9.4e-03
-[1] 1.0e+02 8.5e+03 9.6e-03
-[1] 1.0e+02 9.0e+03 6.8e-03
-[1] 1.0e+02 9.5e+03 6.2e-03
-[1] 1.0e+02 1.0e+04 8.6e-03
-Loading required package: vegan
-Loading required package: permute
-Loading required package: lattice
-This is vegan 2.4-5
-Warning messages:
-1: In rgl.init(initValue, onlyNULL) : RGL: unable to open X11 display
-2: 'rgl_init' failed, running with rgl.useNULL = TRUE 
-[[1]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
+[1] 1.000000e+03 1.000000e+02 3.086395e-02
+[1] 1.500000e+03 1.000000e+02 1.383193e-02
 
-[[2]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
 
-[[3]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
 
-[[4]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
 
-[[5]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
 
-[[6]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[7]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[8]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[9]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[10]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[11]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[12]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[13]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[14]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[15]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[16]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[17]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[18]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[19]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[20]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[21]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[22]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[23]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[[24]]
-[1] "/opt/microsoft/ropen/3.4.3/lib64/R/library"
-
-[1] 1.000000e+02 1.000000e+03 8.467733e-02
-[1] 1.000000e+02 1.250000e+03 8.141835e-02
-[1] 1.000000e+02 1.500000e+03 7.442969e-02
-[1] 1.000000e+02 1.750000e+03 7.666545e-02
-[1] 1.000000e+02 2.000000e+03 8.164447e-02
-Error in (function (..., row.names = NULL, check.rows = FALSE, check.names = TRUE,  : 
-  duplicate row.names: new_row
-Calls: print ... format.data.frame -> as.data.frame.list -> do.call -> <Anonymous>
 Execution halted
+[1] 9.500000e+03 1.000000e+02 2.728689e-03
+[1] 1.000000e+04 1.000000e+02 2.658233e-03
+Warning message:
+In data.row.names(row.names, rowsi, i) :
+  some row.names duplicated: 2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 --> row.names NOT used
