@@ -138,7 +138,7 @@ for(n in n_vec)
       
       
       dec<-max(abs(Dts-Dzs))
-      print(dec)
+      #print(dec)
       
       
     }
