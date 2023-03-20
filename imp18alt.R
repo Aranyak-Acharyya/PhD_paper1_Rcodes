@@ -27,7 +27,7 @@ d<-4
 
 s<-15
 
-n_vec<-seq(100,1000,100)
+n_vec<-seq(100,300,100)
 
 
 
@@ -163,10 +163,3 @@ stopCluster(clust)
 RP<-RP[-1,]
 df<-data.frame(RP)
 save(df,file="P1new18alt.RData")
-power_diff_vec<-RP[,3]
-
-ggplot(data = df, aes(x=RP[,1],y=RP[,3])) +
-  geom_point()+
-  geom_line() +
-  xlab(TeX("no. of nodes (n)"))+
-  ylab(TeX(" $|\\hat{\\pi}- \\pi^*|$")) 
