@@ -121,7 +121,7 @@ for(n in n_vec)
       
       
       
-      MM<-mds(D,ndim = 1,type = "ratio",
+      MM<-mds(D,ndim = 1,type = "interval",
           weightmat = NULL,
           init = "torgerson")
       
