@@ -117,16 +117,16 @@ for(n in n_vec)
       #matrix of shortest path distances
       D<-shortest.paths(g, v=V(g),to=V(g))
       D<-as.matrix(D)
+      Ds<-D[1:s,1:s]
       
       
       
-      
-      MM<-mds(D,ndim = 1,type = "interval",
+      MM<-mds(Ds,ndim = 1,type = "interval",
           weightmat = NULL,
           init = "torgerson")
       
       
-      zs<-as.vector(MM$conf)[1:s]
+      zs<-as.vector(MM$conf)
       
       Dts<-dist(ts,method = "euclidean",
                 diag = TRUE,
@@ -139,6 +139,7 @@ for(n in n_vec)
       
       dec<-max(abs(Dts-Dzs))
       #print(dec)
+      dec
       
       
     }
