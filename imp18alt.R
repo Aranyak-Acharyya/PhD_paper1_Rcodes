@@ -27,7 +27,7 @@ d<-4
 
 s<-5
 
-n_vec<-seq(1000,7000,1000)
+n_vec<-seq(1000,10000,1000)
 
 
 
@@ -49,8 +49,8 @@ power_diff_vec<-vector()
 for(n in n_vec)
 {
   
-  lambda<-1.0
-  
+  lambda<-0.6
+  l<-as.integer(n/10)
   
   
   clusterExport(clust,list("n","lambda"))
@@ -93,7 +93,7 @@ for(n in n_vec)
       #X_hat<-X_hat_raw%*%W
       
       
-      B0<-as.matrix(dist(X_hat,method = "euclidean",
+      B0<-as.matrix(dist(X_hat[1:l,],method = "euclidean",
               diag=TRUE,upper=TRUE))
       
       BB<-ifelse(B0<lambda,B0,0)
